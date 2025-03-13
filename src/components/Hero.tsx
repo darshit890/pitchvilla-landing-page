@@ -94,7 +94,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
           {/* Left Column - Heading and Subheading */}
           <div className="space-y-5 text-center md:text-left">
-            <div>
+            <div className="mt-20 md:mt-0">
               <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-white font-medium leading-tight">
                 WHERE A STARTUP MEETS THE RIGHT INVESTOR
               </h1>
@@ -180,43 +180,43 @@ export default function Hero() {
                   onValueChange={setUserType}
                   className="space-y-3"
                 >
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
                     <RadioGroupItem
                       value="investor"
                       id="investor"
-                      className="text-fuchsia-600"
+                      className="text-fuchsia-600 absolute left-3"
                     />
                     <Label
                       htmlFor="investor"
-                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer"
+                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
                     >
                       INVESTOR
                     </Label>
                   </div>
 
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
                     <RadioGroupItem
                       value="startup"
                       id="startup"
-                      className="text-fuchsia-600"
+                      className="text-fuchsia-600 absolute left-3"
                     />
                     <Label
                       htmlFor="startup"
-                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer"
+                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
                     >
                       STARTUPS
                     </Label>
                   </div>
 
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
                     <RadioGroupItem
                       value="student"
                       id="student"
-                      className="text-fuchsia-600"
+                      className="text-fuchsia-600 absolute left-3"
                     />
                     <Label
                       htmlFor="student"
-                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer "
+                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
                     >
                       STUDENT
                     </Label>
