@@ -6,14 +6,46 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowRight } from "lucide-react";
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import axios from "axios";
 import { toast } from "sonner";
+
+// Common country codes
+const countryCodes = [
+  { value: "+91", label: "India (+91)" },
+  { value: "+1", label: "USA (+1)" },
+  { value: "+44", label: "UK (+44)" },
+  { value: "+61", label: "Australia (+61)" },
+  { value: "+86", label: "China (+86)" },
+  { value: "+971", label: "UAE (+971)" },
+  { value: "+65", label: "Singapore (+65)" },
+  { value: "+49", label: "Germany (+49)" },
+  { value: "+33", label: "France (+33)" },
+  { value: "+81", label: "Japan (+81)" },
+  { value: "+7", label: "Russia" },
+  { value: "+27", label: "South Africa" },
+  { value: "+55", label: "Brazil" },
+  { value: "+52", label: "Mexico" },
+];
 
 export default function Hero() {
   const [userType, setUserType] = useState<string>("investor");
   const [fullName, setFullName] = useState<string>("");
+  const [countryCode, setCountryCode] = useState<string>("+91");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Only allow numbers
+    const value = e.target.value.replace(/\D/g, '');
+    setPhoneNumber(value);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,10 +64,10 @@ export default function Hero() {
     try {
       setIsSubmitting(true);
 
-      // Send data to the API
+      // Send data to the API with full phone number including country code
       const response = await axios.post("/api/users", {
         fullName,
-        phoneNumber,
+        phoneNumber: `${countryCode}${phoneNumber}`,
         userType,
       });
 
@@ -110,13 +142,36 @@ export default function Hero() {
                 >
                   Phone Number
                 </Label>
-                <Input
-                  id="phoneNumber"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder=""
-                  className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950 placeholder:text-purple-900/50"
-                />
+                <div className="flex gap-2">
+                  <div className="w-1/3">
+                    <Select 
+                      value={countryCode} 
+                      onValueChange={setCountryCode}
+                    >
+                      <SelectTrigger className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950">
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {countryCodes.map((code) => (
+                          <SelectItem key={code.value} value={code.value}>
+                            {code.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="w-2/3">
+                    <Input
+                      id="phoneNumber"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
+                      placeholder="Enter phone number"
+                      className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950 placeholder:text-purple-900/50"
+                      type="tel"
+                      inputMode="numeric"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-2 md:space-y-4">
