@@ -17,7 +17,7 @@ const FeatureSection = () => {
       </div>
 
       {/* Content container - shifted slightly right on mobile/medium */}
-      <div className="relative z-10 flex flex-col justify-center h-full w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12  py-16 sm:py-20 md:py-24">
+      <div className="relative z-10 flex flex-col justify-center h-full w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12  py-16 sm:py-20 md:py-80">
         <div className="text-center md:text-left pr-0 sm:pr-4 md:pr-0 md:ml-0 lg:ml-8 max-w-full sm:mr-0 md:mr-6 lg:mr-12 ">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8">
             PITCH · CONNECT · CLOSE

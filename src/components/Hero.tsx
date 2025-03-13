@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowRight } from "lucide-react";
-import { 
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -43,7 +43,7 @@ export default function Hero() {
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Only allow numbers
-    const value = e.target.value.replace(/\D/g, '');
+    const value = e.target.value.replace(/\D/g, "");
     setPhoneNumber(value);
   };
 
@@ -144,10 +144,7 @@ export default function Hero() {
                 </Label>
                 <div className="flex gap-2 flex-wrap sm:flex-nowrap">
                   <div className="w-full sm:w-1/3">
-                    <Select 
-                      value={countryCode} 
-                      onValueChange={setCountryCode}
-                    >
+                    <Select value={countryCode} onValueChange={setCountryCode}>
                       <SelectTrigger className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 w-full">
                         <SelectValue placeholder="Code" />
                       </SelectTrigger>
@@ -191,7 +188,7 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="investor"
-                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
+                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer"
                     >
                       INVESTOR
                     </Label>
@@ -205,7 +202,7 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="startup"
-                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
+                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer"
                     >
                       STARTUPS
                     </Label>
@@ -219,7 +216,7 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="student"
-                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
+                      className="flex-1 text-purple-950 text-sm pl-28 md:pl-28 lg:pl-32 cursor-pointer "
                     >
                       STUDENT
                     </Label>
@@ -229,7 +226,7 @@ export default function Hero() {
 
               <Button
                 type="submit"
-                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2"
+                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2 "
                 disabled={isSubmitting}
                 suppressHydrationWarning
               >
