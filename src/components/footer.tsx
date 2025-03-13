@@ -141,9 +141,6 @@ const Footer = () => {
           {/* Copyright */}
         </div>
       </footer>
-      <div className=" py-6 text-center bg-[#212121]">
-        <p className="text-sm text-gray-400">@Copyright Qode Interactive</p>
-      </div>
     </>
   );
 };
