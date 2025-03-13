@@ -17,7 +17,7 @@ import { toast } from "sonner";
 const CampusAmbassador = () => {
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [countryCode, setCountryCode] = useState<string>("+1"); // Default to US
+  const [countryCode, setCountryCode] = useState<string>("+91"); // Default to US
   const [cityName, setCityName] = useState<string>("");
   const [collegeName, setCollegeName] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
