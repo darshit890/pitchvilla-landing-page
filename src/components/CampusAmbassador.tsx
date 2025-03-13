@@ -131,7 +131,7 @@ const CampusAmbassador = () => {
         <div className="w-full md:w-3/5 lg:w-1/2 flex flex-col md:pl-12 lg:pl-24 mt-20">
           {/* Heading Text */}
           <div className="text-white mb-10 md:mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+            <h1 className="text-3xl   font-bold mb-2 w-full">
               CAMPUS AMBASSADOR PROGRAM
             </h1>
             <p className="text-lg md:text-xl">

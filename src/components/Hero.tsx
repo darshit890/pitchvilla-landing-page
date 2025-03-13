@@ -89,16 +89,16 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center p-4 ">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-36 items-center">
+    <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center px-4 py-8 md:py-12">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
           {/* Left Column - Heading and Subheading */}
-          <div className="space-y-6 md:space-y-8 text-center md:text-left">
+          <div className="space-y-5 text-center md:text-left">
             <div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl text-white leading-tight ">
+              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-white font-medium leading-tight">
                 WHERE A STARTUP MEETS THE RIGHT INVESTOR
               </h1>
-              <p className="mt-4 md:mt-6 text-lg sm:text-xl text-white/90 leading-normal">
+              <p className="mt-3 text-sm sm:text-base md:text-lg text-white/90 leading-normal">
                 INDIA&apos;S FIRST AI POWERED
                 <br className="hidden sm:block" />
                 FOUNDERS X INVESTOR MATCHMAKING PLATFORM
@@ -108,21 +108,21 @@ export default function Hero() {
             <div>
               <Button
                 variant="outline"
-                className="mt-4 md:mt-8 bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:text-white rounded-full px-4 sm:px-6 md:px-8 py-4 md:py-6 text-base md:text-lg group"
+                className="mt-4 bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:text-white rounded-full px-5 py-3 text-sm sm:text-base group"
               >
                 <span className="font-normal">APP LAUNCHING IN APRIL 2025</span>
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
 
           {/* Right Column - Form Card */}
-          <div className="bg-[#6500AB] rounded-2xl md:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10">
-            <form className="space-y-6 md:space-y-8" onSubmit={handleSubmit}>
-              <div className="space-y-2 md:space-y-4">
+          <div className="bg-[#6500AB] rounded-3xl shadow-xl p-5 sm:p-6 md:p-8">
+            <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
+              <div className="space-y-2">
                 <Label
                   htmlFor="fullName"
-                  className="text-white text-base md:text-lg"
+                  className="text-white text-sm md:text-base block mb-1"
                 >
                   Full Name
                 </Label>
@@ -131,24 +131,24 @@ export default function Hero() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder=""
-                  className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950 placeholder:text-purple-900/50"
+                  className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 placeholder:text-purple-900/50 w-full"
                 />
               </div>
 
-              <div className="space-y-2 md:space-y-4">
+              <div className="space-y-2">
                 <Label
                   htmlFor="phoneNumber"
-                  className="text-white text-base md:text-lg"
+                  className="text-white text-sm md:text-base block mb-1"
                 >
                   Phone Number
                 </Label>
-                <div className="flex gap-2">
-                  <div className="w-1/3">
+                <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+                  <div className="w-full sm:w-1/3">
                     <Select 
                       value={countryCode} 
                       onValueChange={setCountryCode}
                     >
-                      <SelectTrigger className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950">
+                      <SelectTrigger className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 w-full">
                         <SelectValue placeholder="Code" />
                       </SelectTrigger>
                       <SelectContent>
@@ -160,13 +160,13 @@ export default function Hero() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="w-2/3">
+                  <div className="w-full sm:w-2/3">
                     <Input
                       id="phoneNumber"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
                       placeholder="Enter phone number"
-                      className="bg-gray-200 h-12 md:h-14 rounded-full text-purple-950 placeholder:text-purple-900/50"
+                      className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 placeholder:text-purple-900/50 w-full"
                       type="tel"
                       inputMode="numeric"
                     />
@@ -174,16 +174,16 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="space-y-2 md:space-y-4">
-                <Label className="text-white text-base md:text-lg">
+              <div className="space-y-2">
+                <Label className="text-white text-sm md:text-base block mb-1">
                   Identify Yourself
                 </Label>
                 <RadioGroup
                   value={userType}
                   onValueChange={setUserType}
-                  className="space-y-2 md:space-y-3"
+                  className="space-y-3"
                 >
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-4">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
                     <RadioGroupItem
                       value="investor"
                       id="investor"
@@ -191,13 +191,13 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="investor"
-                      className="flex-1 text-purple-950 font-medium pl-6 sm:pl-12 md:pl-20 lg:pl-32"
+                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
                     >
                       INVESTOR
                     </Label>
                   </div>
 
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-4">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
                     <RadioGroupItem
                       value="startup"
                       id="startup"
@@ -205,13 +205,13 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="startup"
-                      className="flex-1 text-purple-950 font-medium pl-6 sm:pl-12 md:pl-20 lg:pl-32"
+                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
                     >
                       STARTUPS
                     </Label>
                   </div>
 
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-4">
+                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2">
                     <RadioGroupItem
                       value="student"
                       id="student"
@@ -219,7 +219,7 @@ export default function Hero() {
                     />
                     <Label
                       htmlFor="student"
-                      className="flex-1 text-purple-950 font-medium pl-6 sm:pl-12 md:pl-20 lg:pl-32"
+                      className="flex-1 text-purple-950 text-sm pl-3 sm:pl-4 md:pl-6 lg:pl-8 cursor-pointer"
                     >
                       STUDENT
                     </Label>
@@ -229,7 +229,7 @@ export default function Hero() {
 
               <Button
                 type="submit"
-                className="w-full bg-[#C6009A] hover:bg-[#C6009A] text-white rounded-full py-4 md:py-6 text-base md:text-lg font-medium"
+                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2"
                 disabled={isSubmitting}
                 suppressHydrationWarning
               >

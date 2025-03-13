@@ -3,7 +3,7 @@ import React from "react";
 
 const FeatureSection = () => {
   return (
-    <div className="relative md:min-h-screen min-h-[50vh]">
+    <div className="relative xl:min-h-[150vh] md:min-h-screen min-h-[50vh]">
       {/* Background image with reduced height on mobile/medium */}
       <div className="absolute inset-0 z-0">
         <Image
