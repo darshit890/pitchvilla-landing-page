@@ -4,15 +4,48 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue 
+} from "@/components/ui/select";
 import axios from "axios";
 import { toast } from "sonner";
 
 const CampusAmbassador = () => {
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [countryCode, setCountryCode] = useState<string>("+1"); // Default to US
   const [cityName, setCityName] = useState<string>("");
   const [collegeName, setCollegeName] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  // Common country codes
+  const countryCodes = [
+    { code: "+91", country: "India" },
+    { code: "+1", country: "US/Canada" },
+    { code: "+44", country: "UK" },
+    { code: "+61", country: "Australia" },
+    { code: "+49", country: "Germany" },
+    { code: "+33", country: "France" },
+    { code: "+86", country: "China" },
+    { code: "+81", country: "Japan" },
+    { code: "+7", country: "Russia" },
+    { code: "+27", country: "South Africa" },
+    { code: "+55", country: "Brazil" },
+    { code: "+52", country: "Mexico" },
+  ];
+
+  // Validate phone number input to only allow digits
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Only allow digits
+    if (value === "" || /^\d+$/.test(value)) {
+      setPhoneNumber(value);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,9 +74,11 @@ const CampusAmbassador = () => {
 
     try {
       setIsSubmitting(true);
+      const completePhoneNumber = `${countryCode}${phoneNumber}`;
+      
       console.log("Sending data to API:", {
         fullName,
-        phoneNumber,
+        phoneNumber: completePhoneNumber,
         cityName,
         collegeName,
       });
@@ -51,7 +86,7 @@ const CampusAmbassador = () => {
       // Send data to the API
       const response = await axios.post("/api/campus-ambassadors", {
         fullName,
-        phoneNumber,
+        phoneNumber: completePhoneNumber,
         cityName,
         collegeName,
       });
@@ -132,12 +167,35 @@ const CampusAmbassador = () => {
                 >
                   Phone Number
                 </label>
-                <Input
-                  id="phoneNumber"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="w-full border border-gray-300 rounded-full h-12"
-                />
+                <div className="flex gap-2">
+                  <div className="w-1/3">
+                    <Select
+                      value={countryCode}
+                      onValueChange={setCountryCode}
+                    >
+                      <SelectTrigger className="border border-gray-300 rounded-full h-12">
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {countryCodes.map((country) => (
+                          <SelectItem key={country.code} value={country.code}>
+                            {country.code} ({country.country})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="w-2/3">
+                    <Input
+                      id="phoneNumber"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
+                      className="w-full border border-gray-300 rounded-full h-12"
+                      placeholder="Phone number (digits only)"
+                      type="tel"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>
