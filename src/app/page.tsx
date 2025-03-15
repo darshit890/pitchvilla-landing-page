@@ -8,7 +8,6 @@ export default function HeroSection() {
   return (  
     <>
     <Hero />
-    <FeatureSection />
     <PitchDeck />
     <CampusAmbassador />
     </>
