@@ -103,7 +103,7 @@ export default function Hero() {
             
             {/* Subheading with left alignment and fixed spacing */}
             <p className="mt-6 text-xl sm:text-2xl md:text-3xl text-white/90 font-medium tracking-wide">
-              <span className="inline-block">THE WORLD'S FIRST AI-DRIVEN</span>
+              <span className="inline-block">THE WORLD&apos;S FIRST AI-DRIVEN</span>
               <span className="inline-block block">STARTUP ECOSYSTEM CONNECTOR</span>
             </p>
           </div>
