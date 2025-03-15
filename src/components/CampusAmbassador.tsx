@@ -130,14 +130,14 @@ const CampusAmbassador = () => {
         {/* Left side - Text and Form */}
         <div className="w-full md:w-3/5 lg:w-1/2 flex flex-col md:pl-12 lg:pl-24 mt-20">
           {/* Heading Text */}
-          <div className="text-white mb-10 md:mb-16">
-            <h1 className="text-3xl   font-bold mb-2 w-full">
-              CAMPUS AMBASSADOR PROGRAM
-            </h1>
-            <p className="text-lg md:text-xl">
-              BE THE FACE OF STARTUP ECOSYSTEM OF YOUR COLLEGE
-            </p>
-          </div>
+<div className="text-white mb-10 md:mb-14">
+  <h1 className="text-3xl md:text-5xl lg:text-4xl font-extrabold mb-3 tracking-tight text-white whitespace-nowrap overflow-hidden">
+    CAMPUS AMBASSADOR PROGRAM
+  </h1>
+  <p className="text-xl md:text-2xl font-semibold tracking-wide">
+    BE THE FACE OF STARTUP ECOSYSTEM OF YOUR COLLEGE
+  </p>
+</div>
 
           {/* White form card */}
           <form
