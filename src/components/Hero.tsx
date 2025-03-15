@@ -90,34 +90,39 @@ export default function Hero() {
 
   return (
     <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center px-4 py-8 md:py-12">
-      <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
-          {/* Left Column - Heading and Subheading */}
-          <div className="space-y-5 text-center md:text-left">
-            <div className="mt-20 md:mt-0">
-              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-white font-medium leading-tight">
-                WHERE A STARTUP MEETS THE RIGHT INVESTOR
-              </h1>
-              <p className="mt-3 text-sm sm:text-base md:text-lg text-white/90 leading-normal">
-                INDIA&apos;S FIRST AI POWERED
-                <br className="hidden sm:block" />
-                FOUNDERS X INVESTOR MATCHMAKING PLATFORM
-              </p>
-            </div>
-
-            <div>
-              <Button
-                variant="outline"
-                className="mt-4 bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:text-white rounded-full px-5 py-3 text-sm sm:text-base group"
-              >
-                <span className="font-normal">APP LAUNCHING IN APRIL 2025</span>
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+      <div className="container relative mx-auto">
+        {/* Text content with left alignment */}
+        <div className="max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto md:mr-auto md:ml-16 lg:ml-32 text-center md:text-left mb-16 md:mb-0">
+          <div className="mt-20 md:mt-0">
+            {/* Main heading with left alignment */}
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
+  <span className="inline-block bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+    WHERE INNOVATION MEETS OPPORTUNITY
+  </span>
+</h1>
+            
+            {/* Subheading with left alignment and fixed spacing */}
+            <p className="mt-6 text-xl sm:text-2xl md:text-3xl text-white/90 font-medium tracking-wide">
+              <span className="inline-block">THE WORLD'S FIRST AI-DRIVEN</span>
+              <span className="inline-block block">STARTUP ECOSYSTEM CONNECTOR</span>
+            </p>
           </div>
 
-          {/* Right Column - Form Card */}
-          <div className="bg-[#6500AB] rounded-3xl shadow-xl p-5 sm:p-6 md:p-8">
+          {/* Launch button also left aligned */}
+          <div className="mt-12 text-center md:text-left">
+            <Button
+              variant="outline"
+              className="bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:opacity-90 transition-opacity rounded-full px-10 py-6 text-lg sm:text-xl font-medium shadow-lg group"
+            >
+              <span>APP LAUNCHING IN APRIL 2025</span>
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Form positioned slightly more to the left */}
+        <div className="md:absolute md:right-16 lg:right-24 md:top-1/2 md:transform md:-translate-y-1/2 mt-16 md:mt-0 w-full md:w-96">
+          <div className="bg-[#6500AB] rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8 w-full">
             <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label
@@ -226,7 +231,7 @@ export default function Hero() {
 
               <Button
                 type="submit"
-                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2 "
+                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2"
                 disabled={isSubmitting}
                 suppressHydrationWarning
               >
