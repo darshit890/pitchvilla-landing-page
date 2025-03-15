@@ -102,7 +102,7 @@ export default function Hero() {
 </h1>
             
             {/* Subheading with left alignment and fixed spacing */}
-            <p className="mt-4 text-xl sm:text-2xl md:text-1xl text-white/90 font-medium tracking-wide">
+            <p className="mt-4 text-xl sm:text-1xl md:text-1xl text-white/90 font-medium tracking-wide">
               <span className="inline-block">INDIA&apos;S FIRST AI POWERED</span>
               <span className="inline-block block">FOUNDERS x INVESTOR MATCHMAKING PATFORM</span>
             </p>
