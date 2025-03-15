@@ -92,7 +92,7 @@ export default function Hero() {
     <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center px-4 py-8 md:py-12">
       <div className="container relative mx-auto">
         {/* Text content with left alignment */}
-        <div className="max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto md:mr-auto md:ml-16 lg:ml-50 text-center md:text-left mb-16 md:mb-0">
+        <div className="max-w-xl md:max-w-2xl lg:max-w-2xl mx-auto md:mr-auto md:ml-16 lg:ml-50 text-center md:text-left mb-16 md:mb-0">
           <div className="mt-20 md:mt-0">
             {/* Main heading with left alignment */}
             <h1 className="text-3xl sm:text-4xl md:text-2xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
