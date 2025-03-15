@@ -20,8 +20,6 @@ const PitchDeck = () => {
         <div className="flex flex-col items-center text-center">
           <h1 className="mb-8 font-bold text-4xl text-purple-900">
             NOW ACCEPTING PITCH DECK
-            <br />
-            SUBMISSIONS FOR INVESTMENT
           </h1>
           
           <div className="flex flex-col gap-4 w-80">
