@@ -104,7 +104,7 @@ export default function Hero() {
             {/* Subheading with left alignment and fixed spacing */}
             <p className="mt-4 text-xl sm:text-1xl md:text-1xl text-white/90 font-medium tracking-wide">
               <span className="inline-block">INDIA&apos;S FIRST AI POWERED</span>
-              <span className="inline-block block">FOUNDERS x INVESTOR MATCHMAKING PATFORM</span>
+              <span className="inline-block block">FOUNDERS x INVESTOR MATCHMAKING PLATFORM</span>
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export default function Hero() {
               variant="outline"
               className="bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:opacity-90 transition-opacity rounded-full px-10 py-6 text-lg sm:text-xl font-medium shadow-lg group"
             >
-              <span>APP LAUNCHING IN APRIL 2025</span>
+              <span>APP LAUNCHING - APRIL 2025</span>
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
             </Button>
           </div>
