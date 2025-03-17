@@ -22,12 +22,12 @@ const Footer = () => {
                   CONNECT WITH US :
                 </h2>
                 <div className="flex space-x-4">
-                  <Link href="#" aria-label="LinkedIn">
+                  <Link href="https://www.linkedin.com/company/pitchvilla/" aria-label="LinkedIn">
                     <div className="text-white p-2 rounded-md w-10 h-10 flex items-center justify-center">
                       <Linkedin />
                     </div>
                   </Link>
-                  <Link href="#" aria-label="Instagram">
+                  <Link href="https://www.instagram.com/pitchvillaindia/?hl=en" aria-label="Instagram">
                     <div className="text-white p-2 rounded-md w-10 h-10 flex items-center justify-center">
                       <InstagramIcon />
                     </div>
