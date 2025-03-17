@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowRight } from "lucide-react";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -34,11 +35,39 @@ const countryCodes = [
   { value: "+52", label: "Mexico" },
 ];
 
+// User type options
+const userTypes = [
+  { value: "investor", label: "INVESTOR" },
+  { value: "startup", label: "STARTUPS" },
+  { value: "student", label: "STUDENT" },
+];
+
+// Services options
+const startupServices = [
+  { value: "pitch-deck", label: "Pitch Deck" },
+  { value: "startup-toolkit", label: "Startup Toolkit" },
+  { value: "valuation-report", label: "Valuation Report" },
+  { value: "business-review", label: "Business Review Report" },
+  { value: "company-compliance", label: "Company Compliance" },
+  { value: "founder-counselling", label: "Founder Counselling" },
+  { value: "virtual-cxo", label: "Virtual CXO" },
+];
+
+const investorServices = [
+  { value: "startup-hunter", label: "Startup Hunter" },
+  { value: "due-diligence", label: "Startup Due Diligence" },
+  { value: "co-investing", label: "Co-investing Opportunity" },
+  { value: "elite-club", label: "Investor Elite Club" },
+  { value: "ipo-deals", label: "IPO Deals & Assist" },
+  { value: "mergers-acquisitions", label: "Mergers and Acquisitions" },
+];
+
 export default function Hero() {
   const [userType, setUserType] = useState<string>("investor");
   const [fullName, setFullName] = useState<string>("");
   const [countryCode, setCountryCode] = useState<string>("+91");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [service, setService] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,6 +98,7 @@ export default function Hero() {
         fullName,
         phoneNumber: `${countryCode}${phoneNumber}`,
         userType,
+        service,
       });
 
       if (response.data.success) {
@@ -76,6 +106,7 @@ export default function Hero() {
         setFullName("");
         setPhoneNumber("");
         setUserType("investor");
+        setService("");
 
         // Show success message
         toast("Your information has been submitted successfully!");
@@ -93,13 +124,13 @@ export default function Hero() {
       <div className="container relative mx-auto">
         {/* Text content with left alignment */}
         <div className="max-w-xl md:max-w-2xl lg:max-w-2xl mx-auto md:mr-auto md:ml-16 lg:ml-50 text-center md:text-left mb-16 md:mb-0">
-          <div className="mt-20 md:mt-0">
+          <div className="mt-16 md:mt-0">
             {/* Main heading with left alignment */}
             <h1 className="text-3xl sm:text-4xl md:text-2xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
-  <span className="inline-block bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
-  WHERE A STARTUP MEETS THE RIGHT INVESTOR
-  </span>
-</h1>
+              <span className="inline-block bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+                WHERE A STARTUP MEETS THE RIGHT INVESTOR
+              </span>
+            </h1>
             
             {/* Subheading with left alignment and fixed spacing */}
             <p className="mt-4 text-xl sm:text-1xl md:text-1xl text-white/90 font-medium tracking-wide">
@@ -120,10 +151,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Form positioned slightly more to the left */}
-        <div className="md:absolute md:right-16 lg:right-24 md:top-1/2 md:transform md:-translate-y-1/2 mt-16 md:mt-0 w-full md:w-96">
+        {/* Form positioned lower */}
+        <div className="md:absolute md:right-16 lg:right-24 md:top-[60%] md:transform md:-translate-y-1/2 mt-16 md:mt-0 w-full md:w-96">
           <div className="bg-[#6500AB] rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8 w-full">
-            <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-4 md:space-y-5" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label
                   htmlFor="fullName"
@@ -177,56 +208,62 @@ export default function Hero() {
               </div>
 
               <div className="space-y-2">
-                <Label className="text-white text-sm md:text-base block mb-1">
+                <Label
+                  htmlFor="userType"
+                  className="text-white text-sm md:text-base block mb-1"
+                >
                   Identify Yourself
                 </Label>
-                <RadioGroup
-                  value={userType}
-                  onValueChange={setUserType}
-                  className="space-y-3"
+                <Select value={userType} onValueChange={setUserType}>
+                  <SelectTrigger
+                    id="userType"
+                    className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 w-full"
+                  >
+                    <SelectValue placeholder="Select user type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {userTypes.map((type) => (
+                      <SelectItem key={type.value} value={type.value}>
+                        {type.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label
+                  htmlFor="service"
+                  className="text-white text-sm md:text-base block mb-1"
                 >
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="investor"
-                      id="investor"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="investor"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      INVESTOR
-                    </Label>
-                  </div>
-
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="startup"
-                      id="startup"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="startup"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      STARTUPS
-                    </Label>
-                  </div>
-
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="student"
-                      id="student"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="student"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      STUDENT
-                    </Label>
-                  </div>
-                </RadioGroup>
+                  Services
+                </Label>
+                <Select value={service} onValueChange={setService}>
+                  <SelectTrigger
+                    id="service"
+                    className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 w-full"
+                  >
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel className="font-medium">For Startups</SelectLabel>
+                      {startupServices.map((service) => (
+                        <SelectItem key={service.value} value={service.value}>
+                          {service.label}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                    <SelectGroup>
+                      <SelectLabel className="font-medium">For Investors</SelectLabel>
+                      {investorServices.map((service) => (
+                        <SelectItem key={service.value} value={service.value}>
+                          {service.label}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
 
               <Button
