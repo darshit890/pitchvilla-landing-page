@@ -109,7 +109,7 @@ export default function Hero() {
                 THE RIGHT <span className="text-pink-300">INVESTOR</span>
               </h1>
               <p className="mt-6 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed font-light">
-                INDIA'S FIRST AI-POWERED
+                INDIA&apos;S FIRST AI-POWERED
                 <br className="hidden sm:block" />
                 FOUNDERS X INVESTOR MATCHMAKING PLATFORM
               </p>
