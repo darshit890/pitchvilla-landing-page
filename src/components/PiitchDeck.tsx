@@ -1,35 +1,73 @@
 import Image from "next/image";
 
-const PitchDeck = () => {
-  return (
-    <div className="relative h-screen w-full">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/Desktop - 7.png"
-          alt="Workspace with keyboard, glasses, coffee, notepad and phone"
-          fill
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-          priority
-        />
-      </div>
-      
-      {/* Absolute positioning for perfect centering */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex flex-col items-center text-center">
-        <h1 className="mb-8 font-bold text-3xl sm:text-4xl md:text-2xl lg:text-5xl text-purple-900">
-    NOW ACCEPTING PITCH DECK
-</h1>
+const ServicesPage = () => {
+  const services = [
+    {
+      title: "Startup Incorporation",
+      description: "Complete incorporation services including documentation, legal compliance, and registration to help you start your business journey right."
+    },
+    {
+      title: "Trademark & IPR Services",
+      description: "Protect your intellectual property with our comprehensive trademark registration and intellectual property rights management services."
+    },
+    {
+      title: "ROC Filing",
+      description: "Timely and accurate Registrar of Companies filing services to ensure your business stays compliant with all regulatory requirements."
+    },
+    {
+      title: "GST Filing",
+      description: "Hassle-free GST registration and periodic filing services to keep your business tax compliant and avoid penalties."
+    },
+    {
+      title: "Certifications",
+      description: "Assistance with obtaining industry-specific certifications and approvals to enhance your business credibility and market access."
+    },
+    {
+      title: "Grants",
+      description: "Expert guidance on identifying, applying for, and securing government and private grants to fuel your business growth."
+    },
+    {
+      title: "Business Planning",
+      description: "Strategic business planning services to help you map your growth journey and achieve sustainable success."
+    },
+    {
+      title: "Pitch Deck",
+      description: "Professional pitch deck creation services that help you effectively communicate your vision to potential investors."
+    },
+    {
+      title: "Valuation Reports",
+      description: "Detailed and credible business valuation reports to support your fundraising efforts and strategic decision-making."
+    }
+  ];
 
-          
-          <div className="flex flex-col gap-4 w-80">
-            <button className="rounded-full bg-gradient-to-r from-[#6500AB] to-[#290045] px-8 py-3 font-bold text-white">
-              UPLOAD PITCHDECK
-            </button>
-            <button className="rounded-full bg-[#E838FF] px-8 py-3 font-bold text-white hover:bg-[#E838FF]/90">
-              UPLOAD VIDEO DECK
-            </button>
+  return (
+    <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700">
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 py-16">
+        <div className="flex flex-col items-center">
+          {/* Heading with decorative elements */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-purple-200 to-pink-300 text-transparent bg-clip-text">
+                Our Services
+              </span>
+            </h1>
+            <div className="h-1 w-24 bg-gradient-to-r from-indigo-300 to-pink-300 mx-auto rounded-full" />
+          </div>
+
+          {/* Services grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-indigo-400/20 hover:border-pink-400/40 transition-all duration-300 group hover:bg-white/15"
+              >
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-pink-200 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-200">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -37,4 +75,4 @@ const PitchDeck = () => {
   );
 };
 
-export default PitchDeck;
+export default ServicesPage;
