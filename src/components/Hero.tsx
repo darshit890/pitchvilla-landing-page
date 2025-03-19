@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Rocket, DollarSign, GraduationCap } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -28,10 +27,10 @@ const countryCodes = [
   { value: "+49", label: "Germany (+49)" },
   { value: "+33", label: "France (+33)" },
   { value: "+81", label: "Japan (+81)" },
-  { value: "+7", label: "Russia" },
-  { value: "+27", label: "South Africa" },
-  { value: "+55", label: "Brazil" },
-  { value: "+52", label: "Mexico" },
+  { value: "+7", label: "Russia (+7)" },
+  { value: "+27", label: "South Africa (+27)" },
+  { value: "+55", label: "Brazil (+55)" },
+  { value: "+52", label: "Mexico (+52)" },
 ];
 
 export default function Hero() {
@@ -89,17 +88,28 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center px-4 py-8 md:py-12">
-      <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
-          {/* Left Column - Heading and Subheading */}
-          <div className="space-y-5 text-center md:text-left">
-            <div className="mt-20 md:mt-0">
-              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-white font-medium leading-tight">
-                WHERE A STARTUP MEETS THE RIGHT INVESTOR
+    <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] flex items-center justify-center px-4 py-8 md:py-12 overflow-hidden relative">
+      {/* Enhanced decorative elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
+      <div className="absolute bottom-10 right-20 w-40 h-40 bg-pink-500/10 rounded-full blur-xl"></div>
+      <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-28 h-28 bg-pink-500/5 rounded-full blur-xl"></div>
+      
+      <div className="container mx-auto max-w-6xl z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+          {/* Left Column - Updated Heading to Two Lines */}
+          <div className="space-y-8 text-center md:text-left">
+            <div className="mt-10 md:mt-0">
+              <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-pink-200 text-xs font-medium mb-4">
+                Coming Soon
+              </div>
+              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
+                WHERE <span className="text-pink-300">A STARTUP MEETS</span>
+                <br className="block" />
+                THE RIGHT <span className="text-pink-300">INVESTOR</span>
               </h1>
-              <p className="mt-3 text-sm sm:text-base md:text-lg text-white/90 leading-normal">
-                INDIA&apos;S FIRST AI POWERED
+              <p className="mt-6 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed font-light">
+                INDIA'S FIRST AI-POWERED
                 <br className="hidden sm:block" />
                 FOUNDERS X INVESTOR MATCHMAKING PLATFORM
               </p>
@@ -108,21 +118,22 @@ export default function Hero() {
             <div>
               <Button
                 variant="outline"
-                className="mt-4 bg-gradient-to-r from-[#6500AB] to-[#290045] text-white border-none hover:text-white rounded-full px-5 py-3 text-sm sm:text-base group"
+                className="mt-4 bg-gradient-to-r from-[#6500AB]/80 to-[#290045]/80 backdrop-blur-sm text-white border border-white/20 hover:border-white/40 hover:from-[#6500AB] hover:to-[#290045] hover:text-white rounded-full px-8 py-6 text-base sm:text-lg group transition-all duration-300"
               >
-                <span className="font-normal">APP LAUNCHING IN APRIL 2025</span>
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <span className="font-medium">APP LAUNCHING - APRIL 2025</span>
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </div>
           </div>
 
           {/* Right Column - Form Card */}
-          <div className="bg-[#6500AB] rounded-3xl shadow-xl p-5 sm:p-6 md:p-8">
-            <form className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
+          <div className="bg-gradient-to-br from-[#6500AB]/90 to-[#6500AB]/70 backdrop-blur-md rounded-3xl shadow-2xl p-6 sm:p-8 border border-purple-500/30 transform transition-all duration-300 hover:shadow-purple-500/20">
+            <h2 className="text-2xl font-semibold text-white mb-1 text-center">Join the Waitlist</h2>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label
                   htmlFor="fullName"
-                  className="text-white text-sm md:text-base block mb-1"
+                  className="text-white text-sm md:text-base font-medium block mb-1"
                 >
                   Full Name
                 </Label>
@@ -130,25 +141,25 @@ export default function Hero() {
                   id="fullName"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder=""
-                  className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 placeholder:text-purple-900/50 w-full"
+                  placeholder="Enter your name"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
                 />
               </div>
 
               <div className="space-y-2">
                 <Label
                   htmlFor="phoneNumber"
-                  className="text-white text-sm md:text-base block mb-1"
+                  className="text-white text-sm md:text-base font-medium block mb-1"
                 >
                   Phone Number
                 </Label>
-                <div className="flex gap-2 flex-wrap sm:flex-nowrap">
-                  <div className="w-full sm:w-1/3">
+                <div className="flex gap-3">
+                  <div className="w-1/3">
                     <Select value={countryCode} onValueChange={setCountryCode}>
-                      <SelectTrigger className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 w-full">
+                      <SelectTrigger className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white w-full focus:border-pink-400">
                         <SelectValue placeholder="Code" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-[#44106C] border border-purple-500/30 text-white">
                         {countryCodes.map((code) => (
                           <SelectItem key={code.value} value={code.value}>
                             {code.label}
@@ -157,13 +168,13 @@ export default function Hero() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="w-full sm:w-2/3">
+                  <div className="w-2/3">
                     <Input
                       id="phoneNumber"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
                       placeholder="Enter phone number"
-                      className="bg-gray-200 h-10 md:h-12 rounded-full text-purple-950 placeholder:text-purple-900/50 w-full"
+                      className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
                       type="tel"
                       inputMode="numeric"
                     />
@@ -171,68 +182,61 @@ export default function Hero() {
                 </div>
               </div>
 
+              {/* User Type Selection - Single Line */}
               <div className="space-y-2">
-                <Label className="text-white text-sm md:text-base block mb-1">
-                  Identify Yourself
+                <Label className="text-white text-sm md:text-base font-medium block mb-1">
+                  I am a...
                 </Label>
-                <RadioGroup
-                  value={userType}
-                  onValueChange={setUserType}
-                  className="space-y-3"
-                >
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="investor"
-                      id="investor"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="investor"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      INVESTOR
-                    </Label>
-                  </div>
-
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="startup"
-                      id="startup"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="startup"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      STARTUPS
-                    </Label>
-                  </div>
-
-                  <div className="flex items-center bg-gray-200 rounded-full p-2 pl-3 py-2 relative">
-                    <RadioGroupItem
-                      value="student"
-                      id="student"
-                      className="text-fuchsia-600 absolute left-3"
-                    />
-                    <Label
-                      htmlFor="student"
-                      className="text-purple-950 text-sm text-center w-full cursor-pointer"
-                    >
-                      STUDENT
-                    </Label>
-                  </div>
-                </RadioGroup>
+                <div className="flex gap-3 w-full">
+                  <button
+                    type="button"
+                    onClick={() => setUserType("investor")}
+                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                      ${userType === "investor" 
+                        ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
+                        : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
+                  >
+                    <DollarSign className="h-5 w-5 mr-2" />
+                    <span className="font-medium text-sm">INVESTOR</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setUserType("startup")}
+                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                      ${userType === "startup" 
+                        ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
+                        : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
+                  >
+                    <Rocket className="h-5 w-5 mr-2" />
+                    <span className="font-medium text-sm">STARTUP</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setUserType("student")}
+                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                      ${userType === "student" 
+                        ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
+                        : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
+                  >
+                    <GraduationCap className="h-5 w-5 mr-2" />
+                    <span className="font-medium text-sm">STUDENT</span>
+                  </button>
+                </div>
               </div>
 
               <Button
                 type="submit"
-                className="w-full font-normal bg-[#C6009A] hover:bg-[#C6009A]/90 text-white rounded-full py-3 md:py-4 text-sm md:text-base mt-2 "
+                className="w-full font-medium bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] hover:from-[#D800AA] hover:to-[#FF6DE1] text-white rounded-full py-3 md:py-4 text-base mt-6 shadow-lg shadow-pink-600/20 transform transition-all duration-300 hover:shadow-pink-600/40 hover:scale-[1.02]"
                 disabled={isSubmitting}
                 suppressHydrationWarning
               >
-                {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
+                {isSubmitting ? "SUBMITTING..." : "JOIN WAITLIST"}
               </Button>
             </form>
+
+            <p className="text-white/60 text-xs text-center mt-6">
+              By joining, you agree to our Terms of Service & Privacy Policy
+            </p>
           </div>
         </div>
       </div>
