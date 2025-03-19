@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const ServicesPage = () => {
   const services = [
     {
@@ -58,7 +56,7 @@ const ServicesPage = () => {
           {/* Services grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
             {services.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-indigo-400/20 hover:border-pink-400/40 transition-all duration-300 group hover:bg-white/15"
               >
