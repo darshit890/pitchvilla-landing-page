@@ -97,18 +97,20 @@ export default function Hero() {
       
       <div className="container mx-auto max-w-6xl z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-          {/* Left Column - Updated Heading to Two Lines */}
-          <div className="space-y-8 text-center md:text-left">
-            <div className="mt-10 md:mt-0">
-              <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-pink-200 text-xs font-medium mb-4">
+          {/* Left Column - Mobile Optimized Heading */}
+          <div className="space-y-6 md:space-y-8 text-center md:text-left">
+            <div className="mt-6 md:mt-0">
+              <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-pink-200 text-xs font-medium mb-3 md:mb-4">
                 Coming Soon
               </div>
-              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
-                WHERE <span className="text-pink-300">A STARTUP MEETS</span>
-                <br className="block" />
-                THE RIGHT <span className="text-pink-300">INVESTOR</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight tracking-tight">
+                WHERE <span className="text-pink-300">A STARTUP</span>
+                <br className="hidden xs:block" />
+                <span className="text-pink-300">MEETS</span> THE RIGHT
+                <br className="hidden xs:block" />
+                <span className="text-pink-300">INVESTOR</span>
               </h1>
-              <p className="mt-6 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed font-light">
+              <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-lg text-white/80 leading-relaxed font-light">
                 INDIA&apos;S FIRST AI-POWERED
                 <br className="hidden sm:block" />
                 FOUNDERS X INVESTOR MATCHMAKING PLATFORM
@@ -118,22 +120,22 @@ export default function Hero() {
             <div>
               <Button
                 variant="outline"
-                className="mt-4 bg-gradient-to-r from-[#6500AB]/80 to-[#290045]/80 backdrop-blur-sm text-white border border-white/20 hover:border-white/40 hover:from-[#6500AB] hover:to-[#290045] hover:text-white rounded-full px-8 py-6 text-base sm:text-lg group transition-all duration-300"
+                className="mt-2 md:mt-4 bg-gradient-to-r from-[#6500AB]/80 to-[#290045]/80 backdrop-blur-sm text-white border border-white/20 hover:border-white/40 hover:from-[#6500AB] hover:to-[#290045] hover:text-white rounded-full px-6 py-5 md:px-8 md:py-6 text-sm sm:text-base group transition-all duration-300"
               >
                 <span className="font-medium">APP LAUNCHING - APRIL 2025</span>
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="ml-2 md:ml-3 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </div>
           </div>
 
           {/* Right Column - Form Card */}
-          <div className="bg-gradient-to-br from-[#6500AB]/90 to-[#6500AB]/70 backdrop-blur-md rounded-3xl shadow-2xl p-6 sm:p-8 border border-purple-500/30 transform transition-all duration-300 hover:shadow-purple-500/20">
-            <h2 className="text-2xl font-semibold text-white mb-1 text-center">Join the Waitlist</h2>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="space-y-2">
+          <div className="bg-gradient-to-br from-[#6500AB]/90 to-[#6500AB]/70 backdrop-blur-md rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8 border border-purple-500/30 transform transition-all duration-300 hover:shadow-purple-500/20">
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-1 text-center">Join the Waitlist</h2>
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+              <div className="space-y-1 md:space-y-2">
                 <Label
                   htmlFor="fullName"
-                  className="text-white text-sm md:text-base font-medium block mb-1"
+                  className="text-white text-sm font-medium block mb-1"
                 >
                   Full Name
                 </Label>
@@ -142,21 +144,21 @@ export default function Hero() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Enter your name"
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 h-10 md:h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 md:space-y-2">
                 <Label
                   htmlFor="phoneNumber"
-                  className="text-white text-sm md:text-base font-medium block mb-1"
+                  className="text-white text-sm font-medium block mb-1"
                 >
                   Phone Number
                 </Label>
-                <div className="flex gap-3">
-                  <div className="w-1/3">
+                <div className="flex gap-2 md:gap-3">
+                  <div className="w-2/5 sm:w-1/3">
                     <Select value={countryCode} onValueChange={setCountryCode}>
-                      <SelectTrigger className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white w-full focus:border-pink-400">
+                      <SelectTrigger className="bg-white/10 backdrop-blur-sm border border-white/20 h-10 md:h-12 rounded-full text-white w-full focus:border-pink-400">
                         <SelectValue placeholder="Code" />
                       </SelectTrigger>
                       <SelectContent className="bg-[#44106C] border border-purple-500/30 text-white">
@@ -168,13 +170,13 @@ export default function Hero() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="w-2/3">
+                  <div className="w-3/5 sm:w-2/3">
                     <Input
                       id="phoneNumber"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
                       placeholder="Enter phone number"
-                      className="bg-white/10 backdrop-blur-sm border border-white/20 h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
+                      className="bg-white/10 backdrop-blur-sm border border-white/20 h-10 md:h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
                       type="tel"
                       inputMode="numeric"
                     />
@@ -182,51 +184,51 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* User Type Selection - Single Line */}
-              <div className="space-y-2">
-                <Label className="text-white text-sm md:text-base font-medium block mb-1">
+              {/* User Type Selection - Better Mobile Layout */}
+              <div className="space-y-1 md:space-y-2">
+                <Label className="text-white text-sm font-medium block mb-1">
                   I am a...
                 </Label>
-                <div className="flex gap-3 w-full">
+                <div className="flex flex-col sm:flex-row gap-2 md:gap-3 w-full">
                   <button
                     type="button"
                     onClick={() => setUserType("investor")}
-                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                    className={`flex items-center justify-center flex-1 py-2 md:py-3 px-3 md:px-4 rounded-full transition-all duration-300 
                       ${userType === "investor" 
                         ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
                         : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
                   >
-                    <DollarSign className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-sm">INVESTOR</span>
+                    <DollarSign className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
+                    <span className="font-medium text-xs md:text-sm">INVESTOR</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => setUserType("startup")}
-                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                    className={`flex items-center justify-center flex-1 py-2 md:py-3 px-3 md:px-4 rounded-full transition-all duration-300 
                       ${userType === "startup" 
                         ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
                         : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
                   >
-                    <Rocket className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-sm">STARTUP</span>
+                    <Rocket className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
+                    <span className="font-medium text-xs md:text-sm">STARTUP</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => setUserType("student")}
-                    className={`flex items-center justify-center flex-1 py-3 px-4 rounded-full transition-all duration-300 
+                    className={`flex items-center justify-center flex-1 py-2 md:py-3 px-3 md:px-4 rounded-full transition-all duration-300 
                       ${userType === "student" 
                         ? "bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white border-2 border-transparent shadow-lg shadow-pink-600/20" 
                         : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/15"}`}
                   >
-                    <GraduationCap className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-sm">STUDENT</span>
+                    <GraduationCap className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
+                    <span className="font-medium text-xs md:text-sm">STUDENT</span>
                   </button>
                 </div>
               </div>
 
               <Button
                 type="submit"
-                className="w-full font-medium bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] hover:from-[#D800AA] hover:to-[#FF6DE1] text-white rounded-full py-3 md:py-4 text-base mt-6 shadow-lg shadow-pink-600/20 transform transition-all duration-300 hover:shadow-pink-600/40 hover:scale-[1.02]"
+                className="w-full font-medium bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] hover:from-[#D800AA] hover:to-[#FF6DE1] text-white rounded-full py-2 md:py-3 lg:py-4 text-sm md:text-base mt-4 md:mt-6 shadow-lg shadow-pink-600/20 transform transition-all duration-300 hover:shadow-pink-600/40 hover:scale-[1.02]"
                 disabled={isSubmitting}
                 suppressHydrationWarning
               >
@@ -234,7 +236,7 @@ export default function Hero() {
               </Button>
             </form>
 
-            <p className="text-white/60 text-xs text-center mt-6">
+            <p className="text-white/60 text-xs text-center mt-4 md:mt-6">
               By joining, you agree to our Terms of Service & Privacy Policy
             </p>
           </div>
