@@ -40,7 +40,9 @@ export default function RootLayout({
         className={` ${garamond.variable} antialiased`}
       >
         <Navbar />
+        <main className="pt-20">
         {children}
+        </main>
         <Footer />
         <Toaster />
       </body>

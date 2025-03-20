@@ -39,7 +39,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700">
+    <div className="relative min-h-screen w-full bg-gradient-to-tl from-[#44106C] via-[#6708A6] to-[#D007AC]">
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-16">
         <div className="flex flex-col items-center">

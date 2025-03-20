@@ -15,9 +15,9 @@ export async function POST(request: NextRequest) {
     console.log(body);
     
     // Validate the input
-    const { fullName, phoneNumber, userType } = body;
+    const { fullName, email, phoneNumber, userType } = body;
     
-    if (!fullName || !phoneNumber || !userType) {
+    if (!fullName || !email || !phoneNumber || !userType) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -31,6 +31,7 @@ export async function POST(request: NextRequest) {
         {
           id: uuidv4(), // Generate a UUID for the id field
           fullName,
+          email,
           phoneNumber,
           userType,
           createdAt: new Date().toISOString()

@@ -16,15 +16,15 @@ const navItems: NavItem[] = [
     name: "SERVICES",
     href: "#services",
     subItems: [
-      { name: "STARTUP INCORPORATION", href: "#startup-incorporation" },
-      { name: "TRADEMARK & IPR SERVICES", href: "#trademark-ipr" },
-      { name: "ROC FILING", href: "#roc-filing" },
-      { name: "GST FILING", href: "#gst-filing" },
-      { name: "CERTIFICATIONS", href: "#certifications" },
-      { name: "GRANTS", href: "#grants" },
-      { name: "BUSINESS PLANNING", href: "#business-planning" },
-      { name: "PITCH DECK", href: "#pitch-deck" },
-      { name: "VALUATION REPORTS", href: "#valuation-reports" },
+      { name: "STARTUP INCORPORATION", href: "/startup-incorporation" },
+      { name: "TRADEMARK & IPR SERVICES", href: "/trademark-ipr" },
+      { name: "ROC FILING", href: "/roc-filing" },
+      { name: "GST FILING", href: "/gst-filing" },
+      { name: "CERTIFICATIONS", href: "/certifications" },
+      { name: "GRANTS", href: "/grants" },
+      { name: "BUSINESS PLANNING", href: "/business-planning" },
+      { name: "PITCH DECK", href: "/pitch-deck" },
+      { name: "VALUATION REPORTS", href: "/valuation-reports" },
     ],
   },
   { name: "GET APP", href: "#get-app" },
@@ -56,7 +56,6 @@ const ClientNavbar = () => {
             key={item.name}
             className="relative group"
             onMouseEnter={() => setHoveredItem(item.name)}
-            onMouseLeave={() => setHoveredItem(null)}
           >
             <Link
               href={item.href}
@@ -80,7 +79,11 @@ const ClientNavbar = () => {
               )}
             </Link>
             {item.subItems && hoveredItem === item.name && (
-              <div className="absolute z-10 w-64 mt-2 bg-white shadow-lg rounded-md py-1">
+              <div 
+                className="absolute z-10 w-64 mt-2 bg-white shadow-lg rounded-md py-1"
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
                 {item.subItems.map((subItem) => (
                   <Link
                     key={subItem.name}

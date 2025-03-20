@@ -113,7 +113,7 @@ const CampusAmbassador = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900 animate-gradient-x">
+      <div className="absolute inset-0 z-0 bg-gradient-to-tl from-[#D007AC] via-[#44106C] to-[#6708A6] animate-gradient-x">
         {/* Abstract Shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
           <div className="absolute top-0 left-0 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl animate-blob"></div>

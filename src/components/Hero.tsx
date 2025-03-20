@@ -36,6 +36,7 @@ const countryCodes = [
 export default function Hero() {
   const [userType, setUserType] = useState<string>("investor");
   const [fullName, setFullName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [countryCode, setCountryCode] = useState<string>("+91");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -55,6 +56,11 @@ export default function Hero() {
       return;
     }
 
+    if (!email.trim()) {
+      toast("Please enter your email address");
+      return;
+    }
+
     if (!phoneNumber.trim()) {
       toast("Please enter your phone number");
       return;
@@ -66,6 +72,7 @@ export default function Hero() {
       // Send data to the API with full phone number including country code
       const response = await axios.post("/api/users", {
         fullName,
+        email,
         phoneNumber: `${countryCode}${phoneNumber}`,
         userType,
       });
@@ -73,6 +80,7 @@ export default function Hero() {
       if (response.data.success) {
         // Reset form
         setFullName("");
+        setEmail("");
         setPhoneNumber("");
         setUserType("investor");
 
@@ -144,6 +152,23 @@ export default function Hero() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Enter your name"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 h-10 md:h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
+                />
+              </div>
+
+              <div className="space-y-1 md:space-y-2">
+                <Label
+                  htmlFor="email"
+                  className="text-white text-sm font-medium block mb-1"
+                >
+                  Email Address
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
                   className="bg-white/10 backdrop-blur-sm border border-white/20 h-10 md:h-12 rounded-full text-white placeholder:text-white/50 w-full focus:border-pink-400 focus:ring-pink-400/50 transition-all duration-300"
                 />
               </div>
