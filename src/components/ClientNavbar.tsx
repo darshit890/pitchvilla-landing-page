@@ -10,7 +10,7 @@ interface NavItem {
   subItems?: { name: string; href: string }[];
 }
 
-// Define navItems directly in this file
+// Define navItems with the STUDENTS dropdown
 const navItems: NavItem[] = [
   {
     name: "SERVICES",
@@ -30,7 +30,16 @@ const navItems: NavItem[] = [
   { name: "GET APP", href: "#get-app" },
   { name: "UPLOAD PITCH DECK", href: "#upload-pitch-deck" },
   { name: "EVENTS", href: "#events" },
-  { name: "STUDENTS", href: "#students" },
+  {
+    name: "STUDENTS",
+    href: "#students",
+    subItems: [
+      { name: "Hackathons", href: "#hackathons" },
+      { name: "Startup Competitions", href: "#startup-competitions" },
+      { name: "Conferences", href: "#conferences" },
+      { name: "Webkitli", href: "#webkitli" },
+    ],
+  },
   { name: "CONTACT US", href: "#contact" },
 ];
 
@@ -38,13 +47,11 @@ const ClientNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  // Add a safety check to ensure navItems is defined
-  const menuItems = navItems || [];
-
   return (
     <div className="flex items-center">
+      {/* Desktop Navbar */}
       <div className="hidden md:flex space-x-4">
-        {menuItems.map((item) => (
+        {navItems.map((item) => (
           <div
             key={item.name}
             className="relative group"
@@ -118,8 +125,7 @@ const ClientNavbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-purple-900">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {/* Add null check here */}
-            {menuItems && menuItems.length > 0 ? menuItems.map((item) => (
+            {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
@@ -128,7 +134,7 @@ const ClientNavbar = () => {
                 >
                   {item.name}
                 </Link>
-                {item.subItems && item.subItems.length > 0 && (
+                {item.subItems && (
                   <div className="pl-4 space-y-1">
                     {item.subItems.map((subItem) => (
                       <Link
@@ -143,7 +149,7 @@ const ClientNavbar = () => {
                   </div>
                 )}
               </div>
-            )) : <div>No menu items available</div>}
+            ))}
           </div>
         </div>
       )}
