@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, GiftIcon, FileText, Search, Briefcase, CheckCircle, DollarSign, Target, Users } from "lucide-react";
+import { GiftIcon, FileText, Search, CheckCircle, DollarSign, Target, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const GrantsPage = () => {
