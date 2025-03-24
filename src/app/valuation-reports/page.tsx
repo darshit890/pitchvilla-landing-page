@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Calculator, FileText, Target, Briefcase, CheckCircle, ChartBar, BarChart4, TrendingUp } from "lucide-react";
+import { Calculator, Target, Briefcase, CheckCircle, ChartBar, BarChart4, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ValuationReportPage = () => {
@@ -22,7 +22,7 @@ const ValuationReportPage = () => {
         </h1>
         
         <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed font-light max-w-2xl">
-          Expert business valuation services to determine your company's true worth and potential.
+          Expert business valuation services to determine your company&apos;S true worth and potential.
         </p>
         
         {/* Service Cards */}
