@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Award, FileCheck, Shield, Clock, CheckCircle, AlignCenterVertical as Certificate } from "lucide-react";
+import { Award, FileCheck, Shield, Clock, CheckCircle, AlignCenterVertical as Certificate } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CertificationsPage = () => {
