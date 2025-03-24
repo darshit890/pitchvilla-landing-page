@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, LineChart, FileText, Target, Briefcase, CheckCircle, PenTool, BarChart, Users } from "lucide-react";
+import { LineChart, FileText, Target, CheckCircle, PenTool, BarChart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BusinessPlanningPage = () => {
