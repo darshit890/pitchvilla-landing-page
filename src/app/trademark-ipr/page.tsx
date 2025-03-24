@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Shield, FileText, Settings, Calendar, Award, Zap, BookOpen, Briefcase, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TrademarkIPRPage = () => {
