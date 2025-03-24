@@ -143,7 +143,7 @@ const StartupIncorporationPage = () => {
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Simple Process</h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">We've streamlined the incorporation process to get your business up and running quickly.</p>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">We&apos;ve streamlined the incorporation process to get your business up and running quickly.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -152,7 +152,7 @@ const StartupIncorporationPage = () => {
               1
             </div>
             <h3 className="text-xl font-bold text-white mb-3">Consultation</h3>
-            <p className="text-white/70">We'll discuss your business goals and help you choose the right entity type.</p>
+            <p className="text-white/70">We&apos;ll discuss your business goals and help you choose the right entity type.</p>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20 text-center">
@@ -238,9 +238,6 @@ const StartupIncorporationPage = () => {
           </div>
         </div>
       </div>
-
-     
-      
     </div>
   );
 };
