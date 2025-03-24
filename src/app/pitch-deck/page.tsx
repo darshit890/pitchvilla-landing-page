@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Presentation, FileText, Target, Briefcase, CheckCircle, PenTool, Layout, Users } from "lucide-react";
+import { Presentation, FileText, Target, CheckCircle, PenTool, Layout, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PitchDeckPage = () => {
