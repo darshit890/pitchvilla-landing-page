@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Calculator, FileText, Calendar, ClipboardCheck, Shield, CheckCircle } from "lucide-react";
+import { Calculator, FileText, Calendar, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const GSTFilingPage = () => {
