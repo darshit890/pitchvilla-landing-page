@@ -15,17 +15,7 @@ const navItems: NavItem[] = [
   {
     name: "SERVICES",
     href: "#services",
-    subItems: [
-      { name: "STARTUP INCORPORATION", href: "/startup-incorporation" },
-      { name: "TRADEMARK & IPR SERVICES", href: "/trademark-ipr" },
-      { name: "ROC FILING", href: "/roc-filing" },
-      { name: "GST FILING", href: "/gst-filing" },
-      { name: "CERTIFICATIONS", href: "/certifications" },
-      { name: "GRANTS", href: "/grants" },
-      { name: "BUSINESS PLANNING", href: "/business-planning" },
-      { name: "PITCH DECK", href: "/pitch-deck" },
-      { name: "VALUATION REPORTS", href: "/valuation-reports" },
-    ],
+   
   },
   { name: "GET APP", href: "#get-app" },
   { name: "UPLOAD PITCH DECK", href: "#upload-pitch-deck" },
