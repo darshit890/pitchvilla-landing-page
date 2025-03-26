@@ -47,7 +47,7 @@ export default function ContactPage() {
             </span>
           </h1>
           <p className="text-lg text-purple-100 max-w-2xl mx-auto">
-            Have questions about our services? Reach out to our team and we'll get back to you within 24 hours.
+            Have questions about our services? Reach out to our team and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
