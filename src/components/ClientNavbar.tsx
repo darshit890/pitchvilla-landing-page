@@ -19,17 +19,17 @@ const navItems: NavItem[] = [
   },
   { name: "GET APP", href: "#get-app" },
   { name: "UPLOAD PITCH DECK", href: "#upload-pitch-deck" },
-  { name: "EVENTS", href: "#events" },
-  {
-    name: "STUDENTS",
-    href: "#students",
-    subItems: [
-      { name: "Hackathons", href: "#hackathons" },
-      { name: "Startup Competitions", href: "#startup-competitions" },
-      { name: "Conferences", href: "#conferences" },
-      { name: "Webkitli", href: "#webkitli" },
-    ],
-  },
+  // { name: "EVENTS", href: "#events" },
+  // {
+  //   name: "STUDENTS",
+  //   href: "#students",
+  //   subItems: [
+  //     { name: "Hackathons", href: "#hackathons" },
+  //     { name: "Startup Competitions", href: "#startup-competitions" },
+  //     { name: "Conferences", href: "#conferences" },
+  //     { name: "Webkitli", href: "#webkitli" },
+  //   ],
+  // },
   { name: "CONTACT US", href: "#contact" },
 ];
 

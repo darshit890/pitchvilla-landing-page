@@ -12,21 +12,24 @@ const ServicesPage = () => {
           title: 'Pvt. Ltd. Incorporation',
           description: 'Private limited company is popular and well known business structure it enjoys wide options to raise funds through bank loans, angel investors, venture capitalists, in comparison to LLPs and OPCs.',
           price: '₹6,299',
-          priceType: 'Professional Fees'
+          priceType: 'Professional Fees',
+          link: ''
         },
         {
           icon: '👤',
           title: 'OPC Incorporation',
           description: 'The one person company helps startup entrepreneurs they can approach angel investors, venture capitalists for funding and easily convert their OPC into multi shareholder private limited company.',
           price: '₹4,799',
-          priceType: 'Professional Fees'
+          priceType: 'Professional Fees',
+          link: ''
         },
         {
           icon: '🤝',
           title: 'LLP Incorporation',
           description: 'Limited liability partnership is the modern business option for traditional firms operating as partnership.',
           price: '₹3,499',
-          priceType: 'Professional Fees'
+          priceType: 'Professional Fees',
+          link: ''
         }
       ]
     },
@@ -38,14 +41,16 @@ const ServicesPage = () => {
           title: 'Trademark Registration',
           description: 'Nobody will dare to copy your brand name once it is a registered trademark.',
           price: '₹998',
-          priceType: 'Professional Fees'
+          priceType: 'Professional Fees',
+          link: ''
         },
         {
           icon: '©',
           title: 'Copyright Registration',
           description: 'Copyright is an important property of the owner. Copyright protects from copycats.',
           price: '₹4,999',
-          priceType: 'Professional Fees'
+          priceType: 'Professional Fees',
+          link: ''
         }
       ]
     },
@@ -57,21 +62,24 @@ const ServicesPage = () => {
           title: 'ROC Return Filing for Pvt. Ltd. Company',
           description: 'ROC return gives details of changes taken place in the company during the year and need to be filed with the ROC even though the company has not done any business during the year.',
           price: '₹3,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link:''
         },
         {
           icon: '📊',
           title: 'ROC Return Filing for OPC Company',
           description: 'ROC return gives details of changes taken place in the company during the year and need to be filed with the ROC even though the company has not done any business during the year.',
           price: '₹2,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link: ''
         },
         {
           icon: '📝',
           title: 'LLP ROC Return Form 11 & Form 8',
           description: 'ROC return gives details of changes taken place in the company during the year and need to be filed with the ROC even though the company has not done any business during the year.',
           price: '₹1,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link: ''
         }
       ]
     },
@@ -83,7 +91,8 @@ const ServicesPage = () => {
           title: 'GST Filing',
           description: 'Anyone supplying goods or services to another state, Online service providers, eCommerce sites need to apply for GST regardless of turnover.',
           price: '₹3,999',
-          priceType: 'All Inclusive'
+          priceType: 'All Inclusive',
+          link: ''
         }
       ]
     },
@@ -95,21 +104,24 @@ const ServicesPage = () => {
           title: 'Startup India Services',
           description: 'Startup India recognition is very important for a Startup to get eligible for 3 years Income Tax exemption, get easy funding and easy loan processing.',
           price: '₹3,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link: ''
         },
         {
           icon: '🏆',
           title: 'ISO Services',
           description: 'ISO means International Standard Organization. It provides a set of requirements that helps management of business to achieve customer satisfaction.',
           price: '₹4,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link: ''
         },
         {
           icon: '📃',
           title: 'MSME / Udyam Services',
           description: 'MSME (Micro Small and Medium Enterprises) Registration is the procedure to get your firm registered under MSME development Act.',
           price: '₹1,999',
-          priceType: 'Consulting Fees'
+          priceType: 'Consulting Fees',
+          link: ''
         }
       ]
     }
@@ -118,7 +130,7 @@ const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = React.useState('STARTUP INCORPORATION');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#44106C] to-[#290045]">
+    <div id='services' className="min-h-screen bg-gradient-to-br to-[#44106C] via-[#6708A6] from-[#D007AC]">
       <div className="container mx-auto px-4 py-12">
         {/* Header with gradient text */}
         <div className="border-b border-purple-500/30 mb-8 pb-4">
@@ -167,9 +179,9 @@ const ServicesPage = () => {
                       </div>
                       <div className="text-xs text-purple-200/60">{service.priceType}</div>
                     </div>
-                    <button className="px-5 py-2 bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white rounded-full text-sm hover:from-[#D800AA] hover:to-[#FF6DE1] shadow-md hover:shadow-pink-600/40 transition-all">
+                    {/* <button className="px-5 py-2 bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white rounded-full text-sm hover:from-[#D800AA] hover:to-[#FF6DE1] shadow-md hover:shadow-pink-600/40 transition-all">
                       GET STARTED
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               ))}
