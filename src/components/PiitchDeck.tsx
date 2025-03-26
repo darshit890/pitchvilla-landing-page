@@ -129,10 +129,10 @@ const ServicesPage = () => {
         
         {/* Category tabs with gradient hover effect */}
         <div className="flex justify-center space-x-2 mb-8 overflow-x-auto pb-2">
-          {Object.keys(servicesSections.reduce((acc, section) => {
-            acc[section.category] = true;
-            return acc;
-          }, {})).map((category, index) => (
+        {Object.keys(servicesSections.reduce<Record<string, boolean>>((acc, section) => {
+  acc[section.category] = true;
+  return acc;
+}, {})).map((category, index) => (
             <button 
               key={index} 
               onClick={() => setActiveCategory(category)}
