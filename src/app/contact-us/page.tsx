@@ -11,7 +11,7 @@ export default function ContactPage() {
     message: ""
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { 
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -19,7 +19,7 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your form submission logic here
     console.log("Form submitted:", formData);
