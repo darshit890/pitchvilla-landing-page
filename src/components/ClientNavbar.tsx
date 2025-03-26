@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
   //     { name: "Webkitli", href: "#webkitli" },
   //   ],
   // },
-  { name: "CONTACT US", href: "#contact" },
+  { name: "CONTACT US", href: "/contact-us" },
 ];
 
 const ClientNavbar = () => {
