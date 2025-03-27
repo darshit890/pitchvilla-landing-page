@@ -10,30 +10,47 @@ interface NavItem {
   subItems?: { name: string; href: string }[];
 }
 
-// Define navItems with the STUDENTS dropdown
+// Define navItems with the new menu structure
 const navItems: NavItem[] = [
-  {
-    name: "SERVICES",
-    href: "#services",
-   
-  },
+  
   { name: "GET APP", href: "#get-app" },
-  { name: "UPLOAD PITCH DECK", href: "#upload-pitch-deck" },
-  // { name: "EVENTS", href: "#events" },
-  // {
-  //   name: "STUDENTS",
-  //   href: "#students",
-  //   subItems: [
-  //     { name: "Hackathons", href: "#hackathons" },
-  //     { name: "Startup Competitions", href: "#startup-competitions" },
-  //     { name: "Conferences", href: "#conferences" },
-  //     { name: "Webkitli", href: "#webkitli" },
-  //   ],
-  // },
-  { name: "CONTACT US", href: "/contact-us" },
+  
+  { 
+    name: "FOUNDER'S HUB", 
+    href: "#founders-hub",
+    subItems: [
+      { name: "PITCH DECK", href: "#founders-PITCH DECK" },
+      { name: "Valuation Report", href: "#founders-Valuation Report" },
+      { name: "TERM SHEET DRAFTING", href: "#founders-TERM SHEET DRAFTING" },
+      { name: "STARTUP COMPLIANCES", href: "#founders-STARTUP COMPLIANCES" },
+      { name: "STRATEGIC CONSULTATION", href: "#founders-STRATEGIC CONSULTATION" }
+    ]
+  },
+  { 
+    name: "INVESTOR'S HUB", 
+    href: "#investors-hub",
+    subItems: [
+      { name: "DEAL SOURCING & MATCHMAKING", href: "#investor-DEAL SOURCING & MATCHMAKING" },
+      { name: "DUE DILIGENCE & VALUATION SUPPORT", href: "#investor-DUE DILIGENCE & VALUATION SUPPORT" },
+      { name: "INVESTMENT DOCUMENTATION", href: "#investor-INVESTMENT DOCUMENTATION" },
+      { name: "PORTFOLIO MANAGEMENT & EXIT STRATEGY", href: "#investor-PORTFOLIO MANAGEMENT & EXIT STRATEGY" },
+      { name: "NVESTOR NETWORK & EDUCATION", href: "#investor-NVESTOR NETWORK & EDUCATION" },
+    ]
+  },
+  { 
+    name: "STUDENTS HUB", 
+    href: "#students-hub",
+    subItems: [
+      { name: "Hackathons", href: "#hackathons" },
+      { name: "Startup Competitions", href: "#startup-competitions" },
+      { name: "Conferences", href: "#conferences" },
+      { name: "Webkitli", href: "#webkitli" }
+    ]
+  },
+  { name: "CONTACT US", href: "/contact-us" }
 ];
 
-const ClientNavbar = () => {
+const WebsiteNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
@@ -87,6 +104,14 @@ const ClientNavbar = () => {
             )}
           </div>
         ))}
+
+        {/* Sign In Button - Added to match the desktop layout */}
+        <Link
+          href="/signin"
+          className="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-purple-700"
+        >
+          SIGN IN
+        </Link>
       </div>
 
       {/* Mobile menu button */}
@@ -143,6 +168,15 @@ const ClientNavbar = () => {
                 )}
               </div>
             ))}
+            
+            {/* Sign In for Mobile */}
+            <Link
+              href="/signin"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              SIGN IN
+            </Link>
           </div>
         </div>
       )}
@@ -150,4 +184,4 @@ const ClientNavbar = () => {
   );
 };
 
-export default ClientNavbar;
+export default WebsiteNavbar;
