@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Download, Apple, Clock } from "lucide-react";
 
 export default function GetAppPage() {
-  const handleNotifyMe = (platform) => {
-    alert(`We'll notify you when PitchVilla launches on ${platform}!`);
-  };
+  const handleNotifyMe = (platform: string) => {
+  alert(`We'll notify you when PitchVilla launches on ${platform}!`);
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden">
