@@ -164,8 +164,8 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-white">Office</h3>
-                    <p className="text-purple-100">123 Startup Hub</p>
-                    <p className="text-purple-100">Bangalore, Karnataka 560001</p>
+                    <p className="text-purple-100">1815, BLOCK-B</p>
+                    <p className="text-purple-100">NAVRATNA CORPORATE PARK AMBLI BOPAL ROAD AHMEDABAD Ahmedabad, Gujarat 380058</p>
                   </div>
                 </div>
 
