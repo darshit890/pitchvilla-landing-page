@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 // Define the NavItem type with support for nested subitems
@@ -134,6 +134,63 @@ const WebsiteNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (itemName: string) => {
+    // Clear any existing timers
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+    }
+
+    // Set a slight delay to prevent accidental menu closing
+    hoverTimerRef.current = setTimeout(() => {
+      setHoveredItem(itemName);
+      setActiveSubmenu(null);
+    }, 50);
+  };
+
+  const handleMouseLeave = () => {
+    // Clear any existing timers
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+    }
+
+    // Add a slight delay before closing to allow cursor to move between elements
+    hoverTimerRef.current = setTimeout(() => {
+      setHoveredItem(null);
+      setActiveSubmenu(null);
+    }, 200);
+  };
+
+  const handleSubmenuMouseEnter = (submenuName: string) => {
+    // Clear any existing timers
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+    }
+
+    setActiveSubmenu(submenuName);
+  };
+
+  const handleSubmenuMouseLeave = () => {
+    // Clear any existing timers
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+    }
+
+    // Add a slight delay before closing
+    hoverTimerRef.current = setTimeout(() => {
+      setActiveSubmenu(null);
+    }, 200);
+  };
+
+  // Cleanup effect to clear timer on component unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimerRef.current) {
+        clearTimeout(hoverTimerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="flex items-center">
@@ -143,14 +200,8 @@ const WebsiteNavbar = () => {
           <div
             key={item.name}
             className="relative group"
-            onMouseEnter={() => {
-              setHoveredItem(item.name);
-              setActiveSubmenu(null);
-            }}
-            onMouseLeave={() => {
-              setHoveredItem(null);
-              setActiveSubmenu(null);
-            }}
+            onMouseEnter={() => handleMouseEnter(item.name)}
+            onMouseLeave={handleMouseLeave}
           >
             <Link
               href={item.href}
@@ -176,12 +227,15 @@ const WebsiteNavbar = () => {
             {item.subItems && hoveredItem === item.name && (
               <div 
                 className="absolute z-10 w-64 mt-2 bg-white shadow-lg rounded-md py-1"
+                onMouseEnter={() => handleMouseEnter(item.name)}
+                onMouseLeave={handleMouseLeave}
               >
                 {item.subItems.map((subItem) => (
                   <div 
                     key={subItem.name} 
                     className="relative"
-                    onMouseEnter={() => setActiveSubmenu(subItem.name)}
+                    onMouseEnter={() => handleSubmenuMouseEnter(subItem.name)}
+                    onMouseLeave={handleSubmenuMouseLeave}
                   >
                     <Link
                       href={subItem.href}
@@ -204,7 +258,11 @@ const WebsiteNavbar = () => {
                       )}
                     </Link>
                     {subItem.nestedSubItems && activeSubmenu === subItem.name && (
-                      <div className="absolute left-full top-0 w-64 bg-white shadow-lg rounded-md py-1">
+                      <div 
+                        className="absolute left-full top-0 w-64 bg-white shadow-lg rounded-md py-1"
+                        onMouseEnter={() => handleSubmenuMouseEnter(subItem.name)}
+                        onMouseLeave={handleSubmenuMouseLeave}
+                      >
                         {subItem.nestedSubItems.map((nestedSubItem) => (
                           <Link
                             key={nestedSubItem.name}
@@ -223,7 +281,7 @@ const WebsiteNavbar = () => {
           </div>
         ))}
 
-        {/* Sign In Button - Added to match the desktop layout */}
+        {/* Sign In Button */}
         <Link
           href="/signin"
           className="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-purple-700"
