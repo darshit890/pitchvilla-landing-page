@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
     href: "#startup-hub",
     subItems: [
       { 
-        name: "PITCH DECK", 
+        name: "Pitch Deck", 
         href: "#startup-PITCH DECK",
         nestedSubItems: [
           { name: "Pitch Deck Creation", href: "#startup-pitch-deck-creation" },
@@ -42,9 +42,9 @@ const navItems: NavItem[] = [
           { name: "Relative Method", href: "#startup-relative-method" }
         ]
       },
-      { name: "TERM SHEET DRAFTING", href: "#startup-term-sheet-drafting" },
+      { name: "Term Sheet Drafting", href: "#startup-term-sheet-drafting" },
       { 
-        name: "STARTUP COMPLIANCES", 
+        name: "Startup Compliances", 
         href: "#startup-compliances",
         nestedSubItems: [
           { name: "Startup India Certificate & MSME Udyam", href: "#startup-india-certificate" },
@@ -56,7 +56,7 @@ const navItems: NavItem[] = [
         ]
       },
       { 
-        name: "STRATEGIC CONSULTATION", 
+        name: "Strategic Consultation", 
         href: "#startup-strategic-consultation",
         nestedSubItems: [
           { name: "Ideation & Advisory", href: "#startup-ideation-advisory" },
@@ -71,7 +71,7 @@ const navItems: NavItem[] = [
     href: "#investors-hub",
     subItems: [
       { 
-        name: "DEAL SOURCING & MATCHMAKING", 
+        name: "Deal Sourcing & Matchmaking", 
         href: "#investor-deal-sourcing",
         nestedSubItems: [
           { name: "Curated Startup Deal Flow", href: "#investor-deal-flow" },
@@ -80,7 +80,7 @@ const navItems: NavItem[] = [
         ]
       },
       { 
-        name: "DUE DILIGENCE & VALUATION SUPPORT", 
+        name: "Due Diligence & Valuation Support", 
         href: "#investor-due-diligence-support",
         nestedSubItems: [
           { name: "Financial & Legal Due Diligence", href: "#investor-financial-due-diligence" },
@@ -89,7 +89,7 @@ const navItems: NavItem[] = [
         ]
       },
       { 
-        name: "INVESTMENT DOCUMENTATION", 
+        name: "Investment Documentation", 
         href: "#investor-investment-documentation",
         nestedSubItems: [
           { name: "Term Sheet Drafting & Negotiation", href: "#investor-term-sheet" },
@@ -98,7 +98,7 @@ const navItems: NavItem[] = [
         ]
       },
       { 
-        name: "PORTFOLIO MANAGEMENT & EXIT STRATEGY", 
+        name: "Portfolio Management & Exit Strategy", 
         href: "#investor-portfolio-management",
         nestedSubItems: [
           { name: "Startup Performance Tracking", href: "#investor-performance-tracking" },
@@ -107,7 +107,7 @@ const navItems: NavItem[] = [
         ]
       },
       { 
-        name: "INVESTOR NETWORK & EDUCATION", 
+        name: "Investor Network & Education", 
         href: "#investor-network",
         nestedSubItems: [
           { name: "Exclusive Investor Roundtables & Webinars", href: "#investor-roundtables" },
