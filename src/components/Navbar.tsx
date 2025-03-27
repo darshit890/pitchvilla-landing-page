@@ -2,6 +2,7 @@
 
 import ClientNavbar from "./ClientNavbar";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -10,7 +11,9 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <Image src="/image-Photoroom 1 (2).png" alt="logo" width={150} height={150} />
+              <Link href="/">
+                <Image src="/image-Photoroom 1 (2).png" alt="logo" width={150} height={150} />
+              </Link>
             </div>
           </div>
 
