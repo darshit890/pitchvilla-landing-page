@@ -38,49 +38,44 @@ const Footer = () => {
 
             {/* Column 2 - Startups */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">STARTUPS</h2>
+              <h2 className="text-lg font-semibold mb-4">STARTUP HUB</h2>
               <ul className="space-y-3 text-gray-500">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    PITCH DECK
+                  PITCH DECK
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    STARTUP TOOLKIT
+                  VALUATION REPORT
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    VALUATION REPORT
+                  TERM SHEET DRAFTING 
+
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    BUSINESS REVIEW REPORT
+                  STARTUP COMPLIANCES 
+
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    COMPANY COMPLIANCE
+                  STRATEGIC CONSULTATION 
+
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="block hover:text-gray-300">
-                    FOUNDER COUNCELLING
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="block hover:text-gray-300">
-                    VIRTUAL CXO
-                  </Link>
-                </li>
+                
+                  
               </ul>
             </div>
 
             {/* Column 3 - Investor */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">INVESTOR</h2>
+              <h2 className="text-lg font-semibold mb-4">INVESTOR HUB</h2>
               <ul className="space-y-3 text-gray-500">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
@@ -89,27 +84,27 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    STARTUP DUE DILIGENCE
+                  DEAL SOURCING & MATCHMAKING
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    CO-INVESTING OPPORTUNITY
+                  DUE DILIGENCE & VALUATION SUPPORT
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    INVESTOR ELITE CLUB
+                  INVESTMENT DOCUMENTATION
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    IPO DEALS & ASSIST
+                  PORTFOLIO MANAGEMENT & EXIT STRATEGY
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    MERGERS AND ACQUSITIONS
+                  INVESTOR NETWORK & EDUCATION
                   </Link>
                 </li>
               </ul>
@@ -121,17 +116,22 @@ const Footer = () => {
               <ul className="space-y-3 text-gray-500">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    CONNECT WITH US
+                  Phone
+                  +91 96878 78669
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    LEGAL DISCLAIMER
+                  Email - 
+                  info@pitchvilla.com
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
-                    SITEMAP
+                  Office - 
+1815, BLOCK-B
+
+NAVRATNA CORPORATE PARK AMBLI BOPAL ROAD AHMEDABAD Ahmedabad, Gujarat 380058
                   </Link>
                 </li>
               </ul>
