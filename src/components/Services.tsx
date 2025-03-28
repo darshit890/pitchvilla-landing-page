@@ -130,7 +130,7 @@ const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = React.useState('STARTUP INCORPORATION');
 
   return (
-    <div id='services' className="min-h-screen bg-gradient-to-br to-[#44106C] via-[#6708A6] from-[#D007AC]">
+    <div id='services' className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         {/* Header with gradient text */}
         <div className="border-b border-purple-500/30 mb-8 pb-4">
