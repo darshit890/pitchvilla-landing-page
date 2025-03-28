@@ -186,10 +186,11 @@ export default function ContactPage() {
             <div className="bg-gradient-to-br from-[#6500AB]/50 to-[#6500AB]/30 backdrop-blur-sm rounded-3xl shadow-lg p-8 border border-purple-500/30">
               <h2 className="text-2xl font-semibold text-white mb-6">Follow Us</h2>
               <div className="flex space-x-4">
-                {['Twitter', 'LinkedIn', 'Instagram', 'Facebook'].map((social) => (
+                {['LinkedIn', 'Instagram'].map((social) => (
                   <a
                     key={social}
-                    href="#"
+                    href="https://www.linkedin.com/company/pitchvilla/"
+                    href="https://www.instagram.com/pitchvillaindia/?hl=en"
                     className="flex items-center justify-center bg-white/10 hover:bg-white/15 border border-white/20 rounded-xl p-3 transition-colors duration-300"
                   >
                     <span className="text-white">{social}</span>
