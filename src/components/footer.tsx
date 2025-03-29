@@ -39,7 +39,7 @@ const Footer = () => {
             {/* Column 2 - Startups */}
             <div>
               <h2 className="text-lg font-semibold mb-4">STARTUP HUB</h2>
-              <ul className="space-y-3 text-gray-500">
+              <ul className="space-y-3 text-white-100">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
                   PITCH DECK
@@ -76,7 +76,7 @@ const Footer = () => {
             {/* Column 3 - Investor */}
             <div>
               <h2 className="text-lg font-semibold mb-4">INVESTOR HUB</h2>
-              <ul className="space-y-3 text-gray-500">
+              <ul className="space-y-3 text-white-100">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
                     STARTUP HUNTER
@@ -113,7 +113,7 @@ const Footer = () => {
             {/* Column 4 - Contact Us */}
             <div>
               <h2 className="text-lg font-semibold mb-4">CONTACT US</h2>
-              <ul className="space-y-3 text-gray-500">
+              <ul className="space-y-3 text-white-100">
                 <li>
                   <Link href="#" className="block hover:text-gray-300">
                   Phone
