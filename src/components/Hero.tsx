@@ -111,12 +111,12 @@ export default function Hero() {
               <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-pink-300 text-xs font-medium mb-4">
                 Coming Soon
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-white font-bold leading-tight tracking-tight mb-4">
-                ARE YOU A STARTUP 
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl text-white font-bold leading-tight tracking-tight mb-1">
+                ARE YOU A STARTUP LOOKING
                 <br />
-                LOOKING TO RAISE FUNDS&nbsp;?
+                   TO RAISE FUNDS&nbsp;?
               </h1>
-              <p className="text-base sm:text-lg md:text-2xl text-pink-100 leading-relaxed font-semibold mb-6">
+              <p className="text-base sm:text-lg md:text-0xl text-pink-100 leading-relaxed font-semibold mb-6">
                 SKIP THE CHASE,&nbsp; 
                 <br className="sm:hidden" />
                  LEAD THE RACE
