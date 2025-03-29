@@ -207,7 +207,7 @@ const CampusAmbassador = () => {
                     id="fullName"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full bg-white/20 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
+                    className="w-full bg-white/100 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
                     placeholder="Your name"
                   />
                 </div>
@@ -225,10 +225,10 @@ const CampusAmbassador = () => {
                         value={countryCode}
                         onValueChange={setCountryCode}
                       >
-                        <SelectTrigger className="bg-white/20 border-0 rounded-xl h-12 text-white">
+                        <SelectTrigger className="bg-white/100 border-0 rounded-xl h-12 text-black">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
-                        <SelectContent className="bg-purple-900 text-white border-purple-700">
+                        <SelectContent className="bg-purple-900 text-black border-purple-700">
                           {countryCodes.map((country) => (
                             <SelectItem key={country.code} value={country.code}>
                               {country.code} ({country.country})
@@ -242,8 +242,8 @@ const CampusAmbassador = () => {
                         id="phoneNumber"
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}
-                        className="w-full bg-white/20 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
-                        placeholder="Phone number"
+                        className="bg-white/100 border-0 rounded-xl h-12 text-black placeholder-black-200 focus:ring-2 focus:ring-pink-500 transition-all"
+                        placeholder="phone number"
                         type="tel"
                       />
                     </div>
@@ -261,7 +261,7 @@ const CampusAmbassador = () => {
                     id="cityName"
                     value={cityName}
                     onChange={(e) => setCityName(e.target.value)}
-                    className="w-full bg-white/20 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
+                    className="w-full bg-white/100 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
                     placeholder="Your city"
                   />
                 </div>
@@ -277,7 +277,7 @@ const CampusAmbassador = () => {
                     id="collegeName"
                     value={collegeName}
                     onChange={(e) => setCollegeName(e.target.value)}
-                    className="w-full bg-white/20 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
+                    className="w-full bg-white/100 border-0 rounded-xl h-12 text-white placeholder-purple-200 focus:ring-2 focus:ring-pink-500 transition-all"
                     placeholder="Your institution"
                   />
                 </div>
