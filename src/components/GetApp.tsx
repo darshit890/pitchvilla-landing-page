@@ -6,12 +6,11 @@ import { Download, Apple, Clock } from "lucide-react";
 
 export default function GetAppPage() {
   const handleNotifyMe = (platform: string) => {
-  alert(`We'll notify you when PitchVilla launches on ${platform}!`);
-};
-
+    alert(`We'll notify you when PitchVilla launches on ${platform}!`);
+  };
 
   return (
-    <div id="get-app" className="min-h-screen bg-gradient-to-bl from-[#44106C] via-[#6708A6] to-[#D007AC] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden">
+    <div id="get-app" className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute animate-blob-1 top-[-10%] left-[-10%] w-72 h-72 bg-purple-500/20 rounded-full filter blur-2xl"></div>
@@ -33,7 +32,7 @@ export default function GetAppPage() {
             <div className="absolute inset-4 bg-white/10 backdrop-blur-sm rounded-[30px] z-30 flex flex-col items-center justify-center text-center p-6">
               <div className="text-white">
                 <h2 className="text-3xl font-bold mb-4">PITCHVILLA</h2>
-                <p className="text-sm text-white/80 mb-6">WHERE A STARTUP MEETS THE RIGHT INVESTOR</p>
+                <p className="text-sm text-white/80 mb-6">WHERE A STARTUP MEETS THE RIGHT INVESTOR </p>
                 <div className="space-y-2">
                   <div className="w-full h-16 bg-white/10 rounded-full animate-pulse"></div>
                   <div className="w-full h-16 bg-white/10 rounded-full animate-pulse"></div>
