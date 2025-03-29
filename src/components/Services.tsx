@@ -134,32 +134,29 @@ const ServicesPage = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Header with gradient text */}
         <div className="border-b border-purple-500/30 mb-8 pb-4">
-          <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
             ALL SERVICES
           </h1>
         </div>
         
         {/* Category tabs with gradient hover effect */}
         <div className="flex justify-center space-x-2 mb-8 overflow-x-auto pb-2">
-        {Object.keys(servicesSections.reduce<Record<string, boolean>>((acc, section) => {
-  acc[section.category] = true;
-  return acc;
-}, {})).map((category, index) => (
+          {servicesSections.map((section, index) => (
             <button 
               key={index} 
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setActiveCategory(section.category)}
               className={`px-6 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-all ${
-                category === activeCategory 
+                section.category === activeCategory 
                   ? 'bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white shadow-lg shadow-pink-600/30' 
-                  : 'bg-white/10 text-purple-200 hover:bg-white/15 border border-white/20'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
               }`}
             >
-              {category}
+              {section.category}
             </button>
           ))}
         </div>
 
-        {/* Services cards with glassmorphism effect */}
+        {/* Services cards with gradient theme but improved text visibility */}
         {servicesSections
           .filter(section => section.category === activeCategory)
           .map((section, sectionIndex) => (
@@ -167,21 +164,21 @@ const ServicesPage = () => {
               {section.services.map((service, serviceIndex) => (
                 <div 
                   key={serviceIndex} 
-                  className="bg-gradient-to-br from-[#6500AB]/50 to-[#6500AB]/30 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition-all hover:-translate-y-1"
+                  className="bg-gradient-to-br from-[#6500AB]/90 to-[#6500AB]/70 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition-all hover:-translate-y-1"
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
                   <h2 className="text-xl font-semibold mb-3 text-white">{service.title}</h2>
-                  <p className="text-purple-100/80 mb-5 text-sm">{service.description}</p>
+                  <p className="text-white text-opacity-90 mb-5 text-sm">{service.description}</p>
                   <div className="flex justify-between items-center">
                     <div>
                       <div className="text-2xl font-bold bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
                         {service.price}
                       </div>
-                      <div className="text-xs text-purple-200/60">{service.priceType}</div>
+                      <div className="text-xs text-white text-opacity-80">{service.priceType}</div>
                     </div>
-                    {/* <button className="px-5 py-2 bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white rounded-full text-sm hover:from-[#D800AA] hover:to-[#FF6DE1] shadow-md hover:shadow-pink-600/40 transition-all">
+                    <button className="px-5 py-2 bg-gradient-to-r from-[#C6009A] to-[#FF4BD8] text-white rounded-full text-sm hover:from-[#D800AA] hover:to-[#FF6DE1] shadow-md hover:shadow-pink-600/40 transition-all">
                       GET STARTED
-                    </button> */}
+                    </button>
                   </div>
                 </div>
               ))}
